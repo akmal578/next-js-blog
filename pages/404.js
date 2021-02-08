@@ -1,28 +1,25 @@
-import Link from "next/link";
-import { useEffect } from "react";
-import { useRouter } from "next/router";
+import Link from 'next/link'
+import { useEffect } from 'react'
+import { useRouter } from 'next/router'
 
 const NotFound = () => {
-  const router = useRouter();
+  const router = useRouter()
 
   useEffect(() => {
     setTimeout(() => {
-      router.push("/");
-    }, 3000);
-  }, []);
+      // router.go(-1)
+      // router.go(1)
+      router.push('/')
+    }, 3000)
+  }, [])
 
   return (
     <div className="not-found">
-      <h1>Oops</h1>
-      <h2>Page Not Found</h2>
-      <p>
-        Go Back{" "}
-        <Link href="/">
-          <a>Homepage</a>
-        </Link>
-      </p>
+      <h1>Ooops...</h1>
+      <h2>That page cannot be found :(</h2>
+      <p>Going back to the <Link href="/"><a>Homepage</a></Link> is 3 seconds...</p>
     </div>
   );
-};
-
+}
+ 
 export default NotFound;
